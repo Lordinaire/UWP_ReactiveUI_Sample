@@ -1,5 +1,6 @@
 ﻿using UWPReactiveUI.Core;
 using Windows.UI.Xaml.Controls;
+using Autofac;
 
 namespace UWPReactiveUI
 {
@@ -12,9 +13,12 @@ namespace UWPReactiveUI
 
         public MainPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
-            ViewModel = DataContext as HipsterViewModel;
+            var container = AutofacBootstrapper.Start();
+            var viewModel = container.Resolve<HipsterViewModel>();
+            DataContext = viewModel;
+            ViewModel = viewModel;
         }
     }
 }

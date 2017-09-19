@@ -8,9 +8,9 @@
       xmlns:trigger="using:Microsoft.Xaml.Interactions.Core"
       xmlns:actions="using:UWPReactiveUI.Actions"
       mc:Ignorable="d">
-    <Page.DataContext>
+    <d:Page.DataContext>
         <core:HipsterViewModel />
-    </Page.DataContext>
+    </d:Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>

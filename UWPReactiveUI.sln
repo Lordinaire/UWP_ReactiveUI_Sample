@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26127.0
+VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UWPReactiveUI", "UWPReactiveUI\UWPReactiveUI.csproj", "{BACB2250-3CEF-44F6-8A23-BEA22F860FED}"
 EndProject
@@ -28,6 +28,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BACB2250-3CEF-44F6-8A23-BEA22F860FED}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{BACB2250-3CEF-44F6-8A23-BEA22F860FED}.Debug|Any CPU.Build.0 = Debug|x86
+		{BACB2250-3CEF-44F6-8A23-BEA22F860FED}.Debug|Any CPU.Deploy.0 = Debug|x86
 		{BACB2250-3CEF-44F6-8A23-BEA22F860FED}.Debug|ARM.ActiveCfg = Debug|ARM
 		{BACB2250-3CEF-44F6-8A23-BEA22F860FED}.Debug|ARM.Build.0 = Debug|ARM
 		{BACB2250-3CEF-44F6-8A23-BEA22F860FED}.Debug|ARM.Deploy.0 = Debug|ARM
@@ -64,6 +66,7 @@ Global
 		{133C1749-452D-4C94-8634-FF512202C002}.Release|x86.ActiveCfg = Release|x86
 		{133C1749-452D-4C94-8634-FF512202C002}.Release|x86.Build.0 = Release|x86
 		{34E0D6E0-F20D-48CF-B859-1D1C97C2C411}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{34E0D6E0-F20D-48CF-B859-1D1C97C2C411}.Debug|Any CPU.Build.0 = Debug|x86
 		{34E0D6E0-F20D-48CF-B859-1D1C97C2C411}.Debug|ARM.ActiveCfg = Debug|ARM
 		{34E0D6E0-F20D-48CF-B859-1D1C97C2C411}.Debug|ARM.Build.0 = Debug|ARM
 		{34E0D6E0-F20D-48CF-B859-1D1C97C2C411}.Debug|ARM.Deploy.0 = Debug|ARM
@@ -134,5 +137,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C2940FC2-8F02-4097-B81A-921AC5EEAAED}
 	EndGlobalSection
 EndGlobal

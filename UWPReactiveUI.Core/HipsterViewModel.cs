@@ -2,7 +2,6 @@
 using System;
 using System.Reactive;
 using System.Threading.Tasks;
-using UWPReactiveUI.Services.Impl;
 using UWPReactiveUI.Services.Interfaces;
 using UWPReactiveUI.Services.Models;
 
@@ -10,6 +9,8 @@ namespace UWPReactiveUI.Core
 {
     public class HipsterViewModel : ReactiveObject
     {
+        private readonly IHipsterService _hipsterService;
+
         private ObservableAsPropertyHelper<HipsterSentence> _sentence;
         public HipsterSentence Sentence
         {
@@ -24,8 +25,9 @@ namespace UWPReactiveUI.Core
 
         public ReactiveCommand<Unit, HipsterSentence> ExecuteGetSentence { get; protected set; }
 
-        public HipsterViewModel()
+        public HipsterViewModel(IHipsterService hipsterService)
         {
+            _hipsterService = hipsterService;
             ExecuteGetSentence = ReactiveCommand.CreateFromTask(GetSentenceAsync);
 
             _isLoading = ExecuteGetSentence.IsExecuting.ToProperty(this, x => x.IsLoading, true);
@@ -33,15 +35,14 @@ namespace UWPReactiveUI.Core
             _sentence = ExecuteGetSentence.ToProperty(this, x => x.Sentence, new HipsterSentence { Text = "Hipster Eggs !" });
         }
 
-        public async Task<HipsterSentence> GetSentenceAsync()
+        public HipsterViewModel()
         {
-            // We should use an IoC
-            IHipsterService hipsterService = new HipsterService();
+            // For design-time purpose
+        }
 
-            // To be able to see the effects (for the demo)
-            await Task.Delay(TimeSpan.FromSeconds(3));
-
-            return await hipsterService.GetSentenceAsync();
+        private async Task<HipsterSentence> GetSentenceAsync()
+        {
+            return await _hipsterService.GetSentenceAsync();
         }
     }
 }

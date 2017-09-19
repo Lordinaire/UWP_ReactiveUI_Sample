@@ -1,9 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using UWPReactiveUI.Services.Interfaces;
 using UWPReactiveUI.Services.Models;
@@ -16,6 +13,9 @@ namespace UWPReactiveUI.Services.Impl
         {
             try
             {
+                // To be able to see the effects (for the demo)
+                await Task.Delay(TimeSpan.FromSeconds(3));
+
                 using (HttpClient client = new HttpClient())
                 {
                     var typeAsParameter = type == HipsterType.Latin ? "hipster-latin": "hipster -centric";
